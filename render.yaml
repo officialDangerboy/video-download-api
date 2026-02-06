@@ -1,0 +1,6 @@
+services:
+     - type: web
+       name: video-downloader
+       env: python
+       buildCommand: "pip install -r requirements.txt && pip install ffmpeg-python"
+       startCommand: "python app.py"
