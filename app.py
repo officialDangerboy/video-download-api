@@ -88,6 +88,8 @@ def get_video_info_universal(url, platform):
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
 
         if result.returncode != 0:
+            print("YT-DLP STDOUT:", result.stdout)
+            print("YT-DLP STDERR:", result.stderr)
             raise Exception("Video not accessible")
 
         info = json.loads(result.stdout)
